@@ -1519,3 +1519,15 @@ rule Sosemanuk
     condition:
         any of them
 }
+
+rule Salsa20_Sbox {
+	meta:
+		author = "Inndy"
+		description = "Look for Salsa20 / ChaCha20 sbox init constants"
+		date = "2020-09-21"
+	strings:
+		$c0 = "expand 16-byte k"
+		$c1 = "expand 32-byte k"
+	condition:
+		any of them
+}
